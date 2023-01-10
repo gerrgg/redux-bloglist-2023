@@ -14,12 +14,13 @@ const Title = styled(Link)`
 `;
 
 const Blog = ({ blog }) => {
+  console.log(blog);
   return (
     <tr>
       <td>
         <Title to={`/blogs/${blog.id}`}>{blog.title}</Title>
       </td>
-      <td>{blog.author}</td>
+      <td>{blog.likes}</td>
     </tr>
   );
 };
@@ -40,7 +41,7 @@ const UserPage = () => {
         <tbody>
           <tr>
             <th>Title</th>
-            <th>Author</th>
+            <th>Likes</th>
           </tr>
           {user.blogs.map((blog) => (
             <Blog key={blog.id} blog={blog} />
